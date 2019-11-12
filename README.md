@@ -41,33 +41,33 @@ This tool does all this.
 
 Make OpenSSL Vulnerable again
 ```
-wget https://ftp.openssl.org/source/old/0.9.x/openssl-0.9.8c.tar.gz
-tar xfz openssl-0.9.8c.tar.gz
-mv openssl-0.9.8c openssl-0.9.8c-vuln
-cd openssl-0.9.8c-vuln
-patch -p1 <../make-OpenSSL-0-9-8c-vulnerable-again.diff
+$ wget https://ftp.openssl.org/source/old/0.9.x/openssl-0.9.8c.tar.gz
+$ tar xfz openssl-0.9.8c.tar.gz
+$ mv openssl-0.9.8c openssl-0.9.8c-vuln
+$ cd openssl-0.9.8c-vuln
+$ patch -p1 <../make-OpenSSL-0-9-8c-vulnerable-again.diff
 ```
 
 On a LE-32 system use:
 ```
-./Configure linux-generic32 shared no-ssl2 no-ssl3 no-comp no-asm
-make depend all
+$ ./Configure linux-generic32 shared no-ssl2 no-ssl3 no-comp no-asm
+$ make depend all
 ```
 
 On a LE-64 system use:
 ```
-./Configure linux-x86_64 shared no-ssl2 no-ssl3 no-comp no-asm
-make depend all
+$ ./Configure linux-x86_64 shared no-ssl2 no-ssl3 no-comp no-asm
+$ make depend all
 ```
 
 Compile
 ```
-gcc -o thc-btc-rng-bf thc-btc-rng-bruteforce.c -I./openssl-0.9.8c-vuln/include -L./openssl-0.9.8c-vuln -lssl -lcrypto
+$ gcc -o thc-btc-rng-bf thc-btc-rng-bruteforce.c -I./openssl-0.9.8c-vuln/include -L./openssl-0.9.8c-vuln -lssl -lcrypto
 ```
 
 Run (also try -h and -l):
 ```
-LD_LIBRARY_PATH=./openssl-0.9.8c-vuln/ ./thc-btc-rng-bf -v 0
+$ LD_LIBRARY_PATH=./openssl-0.9.8c-vuln/ ./thc-btc-rng-bf -v 0
 ```
 
 The output will look something like this:
