@@ -94,3 +94,15 @@ curl http://127.0.0.1:3000/api/BTC/mainnet/address/$addr
 curl http://127.0.0.1:3000/api/BTC/mainnet/address/$addr/balance
 ```
 
+**CVE-2008-0166 and ssh**
+
+The patch can be used for other shenanigans such as checking for vulnerable ssh keys:
+
+```
+$ LD_LIBRARY_PATH=./openssl-0.9.8c-vuln/ PIDHACK=31337 ./ssh-keygen -f id_rsa -N ""
+```
+
+Which on a 32 bit system results in:
+```
+95:14:8a:62:56:d1:7a:32:07:3c:4f:57:86:d6:58:45 root@thc.org
+```
