@@ -1,12 +1,3 @@
-/* ------------------------------------------------------------ *
- * file:        eckeycreate.c                                   *
- * purpose:     Example code for creating elliptic curve        *
- *              cryptography (ECC) key pairs                    *
- * author:      01/26/2015 Frank4DD                             *
- *                                                              *
- * gcc -o eckeycreate eckeycreate.c -lssl -lcrypto              *
- * ------------------------------------------------------------ */
-
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
