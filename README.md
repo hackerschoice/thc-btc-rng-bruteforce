@@ -2,7 +2,7 @@
 
 A tool to determine if anyone ever used the Bitcoin client software to receive a Bitcoin payment on a system that uses the [CVE-2008-0166](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0166) broken Random Number Generator. (The tool generates all possible combinations of bitcoin addresses using the broken RNG).
 
-**Answer:** We did not find any. Thought, it was a lot of fun searching...
+**Answer:** We did not find any. Tought, it was a lot of fun searching...
 
 The broken version of OpenSSL was being seeded only by the process ID. Due to differences between endianness and sizeof(long), the output was architecture-specific: little-endian 32bit (e.g. i386), little-endian 64bit (e.g. amd64, ia64), big-endian 32bit (e.g. powerpc, sparc). PID 0 is the kernel and PID_MAX (32768) is not reached when wrapping, so there were 32767 possible random number streams per architecture.
 
