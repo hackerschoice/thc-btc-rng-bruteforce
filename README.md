@@ -106,3 +106,8 @@ Which on a 32 bit system results in:
 ```
 95:14:8a:62:56:d1:7a:32:07:3c:4f:57:86:d6:58:45 root@thc.org
 ```
+
+**Related Work**
+
+Check out [hoschi](https://github.com/stealth/hoschi) by stealth. A BTC mapping tool which enumarates all IP's inside the bitcoin networth for furhter analysis (Noteable findings are the existance of some SuperMegaNodes through which almost all BTC traffic flows - Oops, there goes privacy).
+
